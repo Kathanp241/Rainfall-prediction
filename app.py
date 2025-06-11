@@ -1,20 +1,18 @@
 import streamlit as st
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
-st.title("🎬 Travel Coach - Movie Price Checker")
+# Dummy model (for testing only)
+model = LinearRegression()
+model.coef_ = np.array([0.1, 0.05, 0.2])
+model.intercept_ = 1.0
 
-# Step 1: Input from user
-location = st.selectbox("📍 Select Your City", ["Mumbai", "Delhi", "Ahmedabad"])
-movie = st.selectbox("🎥 Choose Movie", ["Furiosa", "IF", "Bad Boys", "Inside Out 2"])
-date = st.date_input("📅 Select Date")
-compare = st.button("Compare Ticket Prices")
+st.title("🌧️ Rainfall Prediction (Test)")
+temp = st.number_input("Temperature (°C)", 0.0, 50.0, 25.0)
+humidity = st.number_input("Humidity (%)", 0.0, 100.0, 70.0)
+wind = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
 
-# Step 2: Simulated response (mock)
-if compare:
-    st.subheader(f"🎟️ Price Comparison for {movie} on {date} in {location}")
-    st.write("""
-    - INOX (Phoenix Mall): ₹250
-    - PVR Cinemas: ₹220
-    - Cinepolis: ₹200 (Best Price)
-    - Carnival: ₹230
-    """)
-    st.success("✅ Recommended: Cinepolis (₹200)")
+if st.button("Predict"):
+    x = np.array([[temp, humidity, wind]])
+    rainfall = model.predict(x)[0]
+    st.success(f"Predicted Rainfall: {rainfall:.2f} mm")
