@@ -1,44 +1,27 @@
 import pandas as pd
-import numpy as np
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import StandardScaler
 import pickle
-import os
 
-# Create synthetic weather dataset
-np.random.seed(42)
-n_samples = 1000
+# Sample dataset
+data = {
+    "Temperature": [30, 28, 32, 25, 27, 33, 26, 29],
+    "Humidity":    [85, 78, 90, 70, 65, 95, 60, 75],
+    "WindSpeed":   [12, 10, 15, 8, 7, 18, 6, 9],
+    "Rainfall":    [5.2, 3.1, 6.0, 2.0, 0.5, 7.5, 0.2, 3.5]
+}
 
-temperature = np.random.uniform(10, 35, n_samples)
-humidity = np.random.uniform(30, 100, n_samples)
-wind_speed = np.random.uniform(0, 25, n_samples)
-rainfall = (-0.6 * temperature + 0.8 * humidity + 0.3 * wind_speed + 
-           np.random.normal(0, 5, n_samples))
+df = pd.DataFrame(data)
 
-df = pd.DataFrame({
-    'temperature': temperature,
-    'humidity': humidity,
-    'wind_speed': wind_speed,
-    'rainfall': rainfall
-})
+# Prepare data
+X = df[['Temperature', 'Humidity', 'WindSpeed']]
+y = df['Rainfall']
 
-# Split data into features and target
-X = df[['temperature', 'humidity', 'wind_speed']]
-y = df['rainfall']
-
-# Scale features
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-# Train linear regression model
+# Train model
 model = LinearRegression()
-model.fit(X_scaled, y)
+model.fit(X, y)
 
-# Create directory if not exists
-os.makedirs('models', exist_ok=True)
+# Save model
+with open("models/weather_model.pkl", "wb") as f:
+    pickle.dump(model, f)
 
-# Save model and scaler
-with open('models/weather_model.pkl', 'wb') as f:
-    pickle.dump({'model': model, 'scaler': scaler}, f)
-
-print("Model trained and saved successfully!")
+print("✅ Model trained and saved as model.pkl")
