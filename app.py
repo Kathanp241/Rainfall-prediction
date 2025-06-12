@@ -19,9 +19,12 @@ with col2:
 with col3:
     wind = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
     
-if st.button("Predict"):
-    x = np.array([[temp, humidity, wind]])
-    rainfall = model.predict(x)[0]
+    # Prediction button
+if st.button('Predict Rainfall'):
+    input_features = np.array([[temp, humidity, wind_speed]])
+    scaled_input = scaler.transform(input_features)
+    prediction = model.predict(scaled_input)
+    
     st.subheader('Prediction Result')
     st.metric(label="Expected Rainfall", value=f"{prediction[0]:.2f} mm")
 
