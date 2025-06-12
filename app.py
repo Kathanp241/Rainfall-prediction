@@ -15,7 +15,6 @@ model = model_data['model']
 scaler = model_data['scaler']
 
 # App Title and Description
-st.set_page_config(page_title="Rainfall Prediction", page_icon="🌧️", layout="wide")
 st.title('🌦️ Rainfall Prediction App')
 st.markdown("Enter the weather parameters below to estimate the **rainfall amount (in mm)**.")
 
