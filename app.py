@@ -13,12 +13,12 @@ st.write('AI-Powered Model Predict rainfall based on weather parameters')
 # Input widgets
 col1, col2, col3 = st.columns(3)
 with col1:
-temp = st.number_input("Temperature (°C)", 0.0, 50.0, 25.0)
+    temp = st.number_input("Temperature (°C)", 0.0, 50.0, 25.0)
 with col2:
-humidity = st.number_input("Humidity (%)", 0.0, 100.0, 70.0)
+    humidity = st.number_input("Humidity (%)", 0.0, 100.0, 70.0)
 with col3:
-wind = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
-
+    wind = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
+    
 if st.button("Predict"):
     x = np.array([[temp, humidity, wind]])
     rainfall = model.predict(x)[0]
