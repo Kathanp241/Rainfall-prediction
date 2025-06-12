@@ -21,7 +21,7 @@ with col3:
     
     # Prediction button
 if st.button('Predict Rainfall'):
-    input_features = np.array([[temp, humidity, wind]])
+    input_features = np.array([temp, humidity, wind])
     scaled_input = scaler.transform(input_features)
     prediction = model.predict(scaled_input)
     
