@@ -2,11 +2,6 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-from sklearn.preprocessing import MinMaxScaler
-
-scaler = MinMaxScaler()
-scaler.fit(X_train)  # If you had real training data
-scaled_input = scaler.transform(input_data)
 
 # Dummy model with 5 input features (for demo only)
 model = LinearRegression()
