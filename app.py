@@ -17,7 +17,7 @@ with col1:
 with col2:
     humidity = st.number_input("Humidity (%)", 0.0, 100.0, 70.0)
 with col3:
-    wind = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
+    wind_speed = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
 
 # Predict Button
 if st.button("📊 Predict Rainfall"):
