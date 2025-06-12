@@ -19,8 +19,8 @@ with col2:
 with col3:
     wind = st.number_input("Wind Speed (km/h)", 0.0, 50.0, 10.0)
 
-    if st.button("Predict"):
-    x = np.array([[temp, humidity, wind]])
-    rainfall = model.predict(x)[0]
-    st.success(f"Predicted Rainfall: {rainfall:.2f} mm")
-
+# Predict Button
+if st.button("📊 Predict Rainfall"):
+    input_data = np.array([[temp, humidity, wind_speed]])
+    prediction = model.predict(input_data)
+    st.success(f"🌦️ Predicted Rainfall: **{prediction[0]:.2f} mm**")
