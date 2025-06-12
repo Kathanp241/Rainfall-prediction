@@ -2,10 +2,18 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+scaler.fit(X_train)  # If you had real training data
+scaled_input = scaler.transform(input_data)
+
 # Dummy model with 5 input features (for demo only)
 model = LinearRegression()
-model.coef_ = np.array([0.1, 0.05, 0.2, 0.03, 0.04])  # coefficients for 5 features
-model.intercept_ = 1.0
+# Adjusted dummy model with balanced coefficients
+model.coef_ = np.array([0.05, 0.1, 0.03, 0.005, 0.02])
+model.intercept_ = 0.5
+
 
 # App Title
 st.title("🌧️ Rainfall Prediction")
