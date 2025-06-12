@@ -24,5 +24,3 @@ if st.button("Predict"):
     rainfall = model.predict(x)[0]
     st.success(f"Predicted Rainfall: {rainfall:.2f} mm")
 
-st.subheader('Prediction Result')
-    st.metric(label="Expected Rainfall", value=f"{prediction[0]:.2f} mm")
