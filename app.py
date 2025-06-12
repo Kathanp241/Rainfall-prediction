@@ -33,7 +33,7 @@ if st.button("📊 Predict Rainfall"):
     prediction = model.predict(input_data)[0]
 
     # Interpretation
-    if prediction < 1:
+    if prediction < 7:
         rain_type = "☀️ No Rain"
         color = "green"
     elif prediction < 10:
