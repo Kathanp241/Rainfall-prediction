@@ -35,7 +35,7 @@ The user enters the following weather parameters:
 4. **Output**: Result is displayed with interpretation and can be downloaded.
 
 
-## 💻 Live Demo (Optional)
+## 💻 Live Demo
 👉 Hosted on: https://rainfall-prediction-paxbfjxnuugaryq4z8dp43.streamlit.app/
 
 
