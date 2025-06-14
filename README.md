@@ -1,4 +1,4 @@
-### 🌧️ AI-Powered Rainfall Prediction
+# 🌧️ AI-Powered Rainfall Prediction
 
 This project is a simple machine learning-based application that predicts **rainfall in millimeters** based on key weather parameters such as temperature, humidity, wind speed, pressure, and cloud cover. It is developed using Python and deployed as an interactive web app using **Streamlit**.
 
