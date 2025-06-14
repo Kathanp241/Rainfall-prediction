@@ -3,7 +3,7 @@
 This project is a simple machine learning-based application that predicts **rainfall in millimeters** based on key weather parameters such as temperature, humidity, wind speed, pressure, and cloud cover. It is developed using Python and deployed as an interactive web app using **Streamlit**.
 
 
-## **🚀 Project Overview**
+## 🚀 Project Overview
 
 Rainfall forecasting is crucial in agriculture, disaster management, and public planning. This project demonstrates a basic regression model for rainfall prediction using synthetic or real weather data. The model takes live user input and provides rainfall estimates along with an interpretation (e.g., No Rain, Light Rain, or Heavy Rain).
 
