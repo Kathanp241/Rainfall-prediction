@@ -47,4 +47,4 @@ The user enters the following weather parameters:
 
 ## 📦 Install dependencies:
 ```bash
-pip install streamlit scikit-learn numpy keras tensorflow
+pip install streamlit scikit-learn numpy
